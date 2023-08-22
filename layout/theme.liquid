@@ -28,6 +28,7 @@
 
     {% render 'meta-tags' %}
     <script>
+      
       const urlParams = new URLSearchParams(window.location.search);
       const email = urlParams.get('email');
       const password = urlParams.get('password');
@@ -65,8 +66,9 @@
           const accessToken = data?.data?.customerAccessTokenCreate?.customerAccessToken?.accessToken;
 
           console.log(data);
-          document.cookie = `_secure_session_id=${accessToken}`;
+          {% comment %} document.cookie = `_secure_session_id=${accessToken}`; {% endcomment %}
         });
+
     </script>
 
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>

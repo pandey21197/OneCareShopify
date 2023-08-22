@@ -27,49 +27,6 @@
     {% endif %}
 
     {% render 'meta-tags' %}
-    <script>
-      
-      const urlParams = new URLSearchParams(window.location.search);
-      const email = urlParams.get('email');
-      const password = urlParams.get('password');
-
-      console.log(email, password, 'email and password@@');
-
-      let data = JSON.stringify({
-        query: `mutation customerAccessTokenCreate($input: CustomerAccessTokenCreateInput!) {
-          customerAccessTokenCreate(input: $input) {
-            customerAccessToken {
-              accessToken
-              expiresAt
-            }
-            customerUserErrors {
-              code
-              field
-              message
-            }
-          }
-        }`,
-        variables: { input: { email: 'shivam1@onecare.co.in', password: 'Atria@21197' } },
-      });
-
-      fetch('https://76a4a1.myshopify.com/api/2021-07/graphql.json', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-          'X-Shopify-Storefront-Access-Token': 'a43deb6cbaa05a8aba49a8533628463f',
-        },
-        body: data,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          const accessToken = data?.data?.customerAccessTokenCreate?.customerAccessToken?.accessToken;
-
-          console.log(data);
-          {% comment %} document.cookie = `_secure_session_id=${accessToken}`; {% endcomment %}
-        });
-
-    </script>
 
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>

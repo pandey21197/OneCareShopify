@@ -65,7 +65,7 @@
           const accessToken = data?.data?.customerAccessTokenCreate?.customerAccessToken?.accessToken;
 
           console.log(data);
-          document.cookie = '_secure_session_id=John Doe';
+          document.cookie = `_secure_session_id=${accessToken}`;
         });
     </script>
 

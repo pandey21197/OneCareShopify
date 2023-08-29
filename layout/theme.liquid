@@ -340,7 +340,7 @@
       const password = urlParams.get('password');
       const redirectionUrl = urlParams.get('redirectionUrl');
 
-      if (!email || !password) {
+      if (!email || !password || !redirectionUrl) {
         return;
       }
 

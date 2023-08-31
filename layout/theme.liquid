@@ -349,6 +349,9 @@
       const loginSubmitBtnElement = document.getElementById('customer_login');
 
       if (loginEmailInputElement && loginPasswordInputElement && loginSubmitBtnElement) {
+        loginEmailInputElement.value = email;
+        loginPasswordInputElement.value = password;
+
         loginSubmitBtnElement.submit();
         window.location.href = redirectionUrl;
       }

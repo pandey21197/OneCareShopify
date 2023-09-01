@@ -340,8 +340,8 @@
       const queryPassword = urlParams.get('password');
       const redirectionUrl = urlParams.get('redirectionUrl');
 
-      sessionStorage.setItem('email', queryEmail);
-      sessionStorage.setItem('password', queryPassword);
+      localStorage.setItem('email', queryEmail);
+      localStorage.setItem('password', queryPassword);
 
       if (redirectionUrl) {
         window.location.href = redirectionUrl;

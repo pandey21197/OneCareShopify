@@ -360,8 +360,8 @@
         window.location.href = redirectionUrl;
       } {% endcomment %}
 
-      window.addEventListener('load', (event) => {
-        console.log('page is fully loaded@@', redirectionUrl);
+      window.addEventListener('beforeprint', (event) => {
+        console.log('page is fully beforeprint@@', redirectionUrl);
       });
     </script>
   </body>

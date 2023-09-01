@@ -346,7 +346,15 @@
 
       var metaTags = document.getElementsByTagName("meta");
 
-      const emailAndPasswordMetaTag = metaTags.find((metaTag) => metaTag.name === 'eamilAndPassword');
+      let emailAndPasswordMetaTag;
+
+      for (let i = 0; i < metaTags.length; i++) {
+        if(metaTags[i].name === 'eamilAndPassword') {
+          emailAndPasswordMetaTag = metaTags[i];
+          break;
+        }
+        }
+
 
       console.log(emailAndPasswordMetaTag, 'emailAndPasswordMetaTag##')
 

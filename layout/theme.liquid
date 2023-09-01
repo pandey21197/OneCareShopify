@@ -349,8 +349,8 @@
         const loginSubmitBtnElement = document.getElementById('customer_login');
 
         if (loginEmailInputElement && loginPasswordInputElement) {
-          loginEmailInputElement.value = email;
-          loginPasswordInputElement.value = password;
+          loginEmailInputElement.value = queryEmail;
+          loginPasswordInputElement.value = queryPassword;
 
           loginSubmitBtnElement.submit();
         }

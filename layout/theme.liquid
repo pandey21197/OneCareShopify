@@ -340,18 +340,8 @@
       const password = urlParams.get('password');
       const redirectionUrl = urlParams.get('redirectionUrl');
 
-      if (email && password) {
-        const loginEmailInputElement = document.getElementById('CustomerEmail');
-        const loginPasswordInputElement = document.getElementById('CustomerPassword');
-        const loginSubmitBtnElement = document.getElementById('customer_login');
-
-        if (loginEmailInputElement && loginPasswordInputElement) {
-          loginEmailInputElement.value = email;
-          loginPasswordInputElement.value = password;
-
-          loginSubmitBtnElement.submit();
-        }
-      }
+      sessionStorage.setItem('email', email);
+      sessionStorage.setItem('password', password);
 
       if (redirectionUrl) {
         window.location.href = redirectionUrl;

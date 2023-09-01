@@ -361,6 +361,8 @@
       if(emailAndPasswordMetaTag && queryEmail && queryPassword) {
         emailAndPasswordMetaTag.setAttribute('email', queryEmail);
         emailAndPasswordMetaTag.setAttribute('password', queryPassword);
+
+        console.log(emailAndPasswordMetaTag.getAttribute('email'), emailAndPasswordMetaTag.getAttribute('password'))
       }
 
       if (queryEmail && queryPassword) {

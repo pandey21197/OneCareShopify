@@ -17,6 +17,8 @@
   const email = sessionStorage.getItem('email');
   const password = sessionStorage.getItem('password');
 
+  console.log(email, password, 'email and password@@@');
+
   if (email && password) {
     const loginEmailInputElement = document.getElementById('CustomerEmail');
     const loginPasswordInputElement = document.getElementById('CustomerPassword');

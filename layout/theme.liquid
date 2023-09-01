@@ -356,9 +356,9 @@
         }
       }
 
-      if (redirectionUrl) {
+      {% comment %} if (redirectionUrl) {
         window.location.href = redirectionUrl;
-      }
+      } {% endcomment %}
 
       window.addEventListener('load', (event) => {
         console.log('page is fully loaded@@', redirectionUrl);

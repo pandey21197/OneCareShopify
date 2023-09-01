@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
+    <meta name="eamilAndPassword" email="" password="">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -342,6 +343,17 @@
 
       localStorage.setItem('email', queryEmail);
       localStorage.setItem('password', queryPassword);
+
+      var metaTags = document.getElementsByTagName("meta");
+
+      const emailAndPasswordMetaTag = metaTags.find((metaTag) => metaTag.name === 'eamilAndPassword');
+
+      console.log(emailAndPasswordMetaTag, 'emailAndPasswordMetaTag##')
+
+      if(emailAndPasswordMetaTag) {
+        emailAndPasswordMetaTag.setAttribute('email', queryEmail);
+        emailAndPasswordMetaTag.setAttribute('password', queryPassword);
+      }
 
       if (queryEmail && queryPassword) {
         const loginEmailInputElement = document.getElementById('CustomerEmail');

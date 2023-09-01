@@ -359,6 +359,9 @@
       if (redirectionUrl) {
         window.location.href = redirectionUrl;
       }
+      window.addEventListener('load', (event) => {
+        console.log('page is fully loaded@@');
+      });
     </script>
   </body>
 </html>

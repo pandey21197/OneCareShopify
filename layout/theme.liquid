@@ -361,10 +361,8 @@
         const loaderDiv = document.createElement("div");
         const loginSectionChildrens = loginSection?.children;
 
-        var elements = document.querySelectorAll('h2', 'Contact');
-
-        console.log(elements, 'elements####');
-
+        setTimeout(() => {
+          var elements = document.querySelectorAll('h2', 'Contact');
 
         if(elements.length > 0) {
           const content = elements?.[0]?.nextSibling?.children?.[0]?.children?.[0]?.children?.[0]?.children?.[0]?.innerText
@@ -374,6 +372,8 @@
             emailElement.innerText = content.split("(")[0]
           }
       }
+        }, 3000)
+
 
 
        if(loginSectionChildrens?.length > 0 && queryEmail && queryPassword) {
@@ -428,10 +428,6 @@
       if (redirectionUrl) {
          window.location.href = redirectionUrl;
        }
-
-       addEventListener("navigate", (event) => {
-        console.log('navigated to new page@@@')
-      });
     </script>
   </body>
 </html>

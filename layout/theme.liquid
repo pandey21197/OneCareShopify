@@ -347,80 +347,80 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
     <script>
-       const urlParams = new URLSearchParams(window.location.search);
-       const queryEmail = urlParams.get('email');
-       const queryPassword = urlParams.get('password');
-       const redirectionUrl = urlParams.get('redirectionUrl');
-       const loginSection = document.getElementsByClassName('login')?.[0];
+             const urlParams = new URLSearchParams(window.location.search);
+             const queryEmail = urlParams.get('email');
+             const queryPassword = urlParams.get('password');
+             const redirectionUrl = urlParams.get('redirectionUrl');
+             const loginSection = document.getElementsByClassName('login')?.[0];
 
-        const loaderDiv = document.createElement("div");
-        const loginSectionChildrens = loginSection?.children;
+              const loaderDiv = document.createElement("div");
+              const loginSectionChildrens = loginSection?.children;
 
-        var elements = document.querySelectorAll('h2', 'Contact');
-
-
-        if(elements.length > 0) {
-          const content = elements?.[0]?.nextSibling?.children?.[0]?.children?.[0]?.children?.[0]?.children?.[0]?.innerText
-          const emailElement = elements?.[0]?.nextSibling?.children?.[0]?.children?.[0]?.children?.[0]?.children?.[0];
-
-          if(emailElement && content) {
-            emailElement?.innerText = content.split("(")[0]
-          }
-      }
+              var elements = document.querySelectorAll('h2', 'Contact');
 
 
-       if(loginSectionChildrens?.length > 0) {
-        for(let i = loginSectionChildrens.length - 1; i >=0; i--) {
-          loginSection.removeChild(loginSectionChildrens[i])
-        }
-      }
+              if(elements.length > 0) {
+                const content = elements?.[0]?.nextSibling?.children?.[0]?.children?.[0]?.children?.[0]?.children?.[0]?.innerText
+                const emailElement = elements?.[0]?.nextSibling?.children?.[0]?.children?.[0]?.children?.[0]?.children?.[0];
+      {% comment %}
+                if(emailElement && content) {
+                  emailElement?.innerText = content.split("(")[0]
+                } {% endcomment %}
+            }
 
-      if(loginSection && queryEmail && queryPassword) {
-        loaderDiv.classList.add('loader');
-        loaderDiv.style.display='block';
+
+             if(loginSectionChildrens?.length > 0) {
+              for(let i = loginSectionChildrens.length - 1; i >=0; i--) {
+                loginSection.removeChild(loginSectionChildrens[i])
+              }
+            }
+
+            if(loginSection && queryEmail && queryPassword) {
+              loaderDiv.classList.add('loader');
+              loaderDiv.style.display='block';
 
 
-        loginSection.appendChild(loaderDiv)
-      }
+              loginSection.appendChild(loaderDiv)
+            }
 
-       {% comment %} localStorage.setItem('email', queryEmail);
-       localStorage.setItem('password', queryPassword); {% endcomment %}
+             {% comment %} localStorage.setItem('email', queryEmail);
+             localStorage.setItem('password', queryPassword); {% endcomment %}
 
-       {% comment %} var metaTags = document.getElementsByTagName("meta"); {% endcomment %}
+             {% comment %} var metaTags = document.getElementsByTagName("meta"); {% endcomment %}
 
-       {% comment %} let emailAndPasswordMetaTag; {% endcomment %}
+             {% comment %} let emailAndPasswordMetaTag; {% endcomment %}
 
-       {% comment %} for (let i = 0; i < metaTags.length; i++) {
-         if(metaTags[i].name === 'eamilAndPassword') {
-           emailAndPasswordMetaTag = metaTags[i];
-           break;
-         }
-         }
+             {% comment %} for (let i = 0; i < metaTags.length; i++) {
+               if(metaTags[i].name === 'eamilAndPassword') {
+                 emailAndPasswordMetaTag = metaTags[i];
+                 break;
+               }
+               }
 
-       if(emailAndPasswordMetaTag && queryEmail && queryPassword) {
-         emailAndPasswordMetaTag.setAttribute('email', queryEmail);
-         emailAndPasswordMetaTag.setAttribute('password', queryPassword);
+             if(emailAndPasswordMetaTag && queryEmail && queryPassword) {
+               emailAndPasswordMetaTag.setAttribute('email', queryEmail);
+               emailAndPasswordMetaTag.setAttribute('password', queryPassword);
 
-         console.log(emailAndPasswordMetaTag.getAttribute('email'), emailAndPasswordMetaTag.getAttribute('password'), queryEmail, queryPassword);
-       } {% endcomment %}
+               console.log(emailAndPasswordMetaTag.getAttribute('email'), emailAndPasswordMetaTag.getAttribute('password'), queryEmail, queryPassword);
+             } {% endcomment %}
 
-       if (queryEmail && queryPassword) {
-         const loginEmailInputElement = document.getElementById('CustomerEmail');
-         const loginPasswordInputElement = document.getElementById('CustomerPassword');
-         const loginSubmitBtnElement = document.getElementById('customer_login');
+             if (queryEmail && queryPassword) {
+               const loginEmailInputElement = document.getElementById('CustomerEmail');
+               const loginPasswordInputElement = document.getElementById('CustomerPassword');
+               const loginSubmitBtnElement = document.getElementById('customer_login');
 
-         if (loginEmailInputElement && loginPasswordInputElement) {
-           loginEmailInputElement.value = queryEmail;
-           loginPasswordInputElement.value = queryPassword;
+               if (loginEmailInputElement && loginPasswordInputElement) {
+                 loginEmailInputElement.value = queryEmail;
+                 loginPasswordInputElement.value = queryPassword;
 
-           loginSubmitBtnElement.submit();
-           loaderDiv.style.display='none';
-         }
-       }
+                 loginSubmitBtnElement.submit();
+                 loaderDiv.style.display='none';
+               }
+             }
 
-      if (redirectionUrl) {
-         window.location.href = redirectionUrl;
-       }
+            if (redirectionUrl) {
+               window.location.href = redirectionUrl;
+             }
     </script>
   </body>
 </html>

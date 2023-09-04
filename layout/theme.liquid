@@ -241,6 +241,11 @@
       animation: spin 2s linear infinite;
           }
 
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+
 
           @media screen and (min-width: 750px) {
             body {
@@ -415,7 +420,6 @@
                  loginPasswordInputElement.value = queryPassword;
 
                  loginSubmitBtnElement.submit();
-                 loaderDiv.style.display='none';
                }
              }
 

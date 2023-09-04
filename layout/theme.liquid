@@ -361,8 +361,7 @@
         const loaderDiv = document.createElement("div");
         const loginSectionChildrens = loginSection?.children;
 
-        setTimeout(() => {
-          var elements = document.querySelectorAll('h2', 'Contact');
+        var elements = document.querySelectorAll('h2', 'Contact');
 
         if(elements.length > 0) {
           const content = elements?.[0]?.nextSibling?.children?.[0]?.children?.[0]?.children?.[0]?.children?.[0]?.innerText
@@ -372,8 +371,6 @@
             emailElement.innerText = content.split("(")[0]
           }
       }
-        }, 3000)
-
 
 
        if(loginSectionChildrens?.length > 0 && queryEmail && queryPassword) {

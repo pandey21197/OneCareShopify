@@ -361,7 +361,9 @@
 
         if(elements.length > 0) {
           const content = elements?.[0]?.nextSibling?.children?.[0]?.children?.[0]?.children?.[0]?.children?.[0]?.innerText
-          elements?.[0]?.nextSibling?.children?.[0]?.children?.[0]?.children?.[0]?.children?.[0]?.innerText = content.split("(")[0]
+          const emailElement = elements?.[0]?.nextSibling?.children?.[0]?.children?.[0]?.children?.[0]?.children?.[0];
+
+          emailElement?.innerText = content.split("(")[0]
       }
 
 

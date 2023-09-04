@@ -424,6 +424,10 @@
          }
        }
 
+       window.addEventListener("load", (event) => {
+          console.log("page is fully loaded");
+        });
+
       if (redirectionUrl) {
          window.location.href = redirectionUrl;
        }

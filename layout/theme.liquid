@@ -374,7 +374,9 @@
                 {% comment %} loginSection.removeChild(loginSectionChildrens[i]) {% endcomment %}
                 loginSectionChildrens[i].style.display = 'none';
               }
+            }
 
+            if(loginSection && queryEmail && queryPassword) {
               loaderDiv.classList.add('loader');
               loaderDiv.style.display='block';
 
